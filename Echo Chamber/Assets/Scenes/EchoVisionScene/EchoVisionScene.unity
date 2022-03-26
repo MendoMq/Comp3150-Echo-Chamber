@@ -1565,6 +1565,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7354006486670596775, guid: 8681dac1307e34b4688cd9a338394d87, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7354006487040047746, guid: 8681dac1307e34b4688cd9a338394d87, type: 3}
       propertyPath: m_Name
       value: VisionBubble
@@ -1572,6 +1576,18 @@ PrefabInstance:
     - target: {fileID: 7354006487040047750, guid: 8681dac1307e34b4688cd9a338394d87, type: 3}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354006487040047750, guid: 8681dac1307e34b4688cd9a338394d87, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354006487040047750, guid: 8681dac1307e34b4688cd9a338394d87, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354006487040047750, guid: 8681dac1307e34b4688cd9a338394d87, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7354006487040047750, guid: 8681dac1307e34b4688cd9a338394d87, type: 3}
       propertyPath: m_LocalPosition.x

@@ -30,7 +30,7 @@ public class MoveTest : MonoBehaviour
         }
         if(Input.GetMouseButtonDown(0)){
             GameObject clone;
-            clone = Instantiate(VisionBubble, transform.position, transform.rotation);
+            clone = Instantiate(VisionBubble, transform.position+(transform.forward*2.5f), transform.rotation);
         }
 
 
