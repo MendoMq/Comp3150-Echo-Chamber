@@ -7,7 +7,7 @@ public class MouseLook : MonoBehaviour
     public float mouseSensitivity = 100f;
     public Transform player;
 
-    float xRotation = 0f;
+    float xRotation = 1f;
     // Start is called before the first frame update
     void Start()
     {

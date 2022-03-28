@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveTest : MonoBehaviour
+public class MouseLookEcho : MonoBehaviour
 {
 
     Vector2 rotation = Vector2.zero;
@@ -10,7 +10,7 @@ public class MoveTest : MonoBehaviour
     public GameObject VisionBubble;
     void Update()
     {
-        
+        /*
         if(Input.GetKey("w")){
             transform.Translate(Vector3.forward * Time.deltaTime * 4);
         }
@@ -29,7 +29,7 @@ public class MoveTest : MonoBehaviour
         if(Input.GetKey("left ctrl")){
             transform.Translate(Vector3.down * Time.deltaTime * 4);
         }
-        
+        */
         if(Input.GetMouseButtonDown(0)){
             GameObject clone;
             clone = Instantiate(VisionBubble, transform.position+(transform.forward*2.5f), Quaternion.identity);
