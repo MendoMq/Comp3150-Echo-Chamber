@@ -10,7 +10,6 @@ public class MoveTest : MonoBehaviour
     public GameObject VisionBubble;
     void Update()
     {
-        
         if(Input.GetKey("w")){
             transform.Translate(Vector3.forward * Time.deltaTime * 4);
         }
