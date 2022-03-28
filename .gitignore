@@ -1,0 +1,4 @@
+
+*.log
+Echo Chamber/ProjectSettings/ProjectSettings.asset
+Echo Chamber/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json
