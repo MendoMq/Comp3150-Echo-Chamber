@@ -5490,7 +5490,9 @@ MonoBehaviour:
   speed: 5
   bullet: {fileID: 861169423206453080, guid: fadc975a065c8ba4ba3923592fef2f83, type: 3}
   gunPos: {fileID: 422380519}
-  bulletSpeed: 0.1
+  bulletSpeed: 30
+  fireRate: 0.5
+  dmg: 10
 --- !u!1 &1555860850
 GameObject:
   m_ObjectHideFlags: 0
