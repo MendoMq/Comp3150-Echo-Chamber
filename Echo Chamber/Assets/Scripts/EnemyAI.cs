@@ -15,17 +15,13 @@ public class EnemyAI : MonoBehaviour
     private float nextFire = 0.0F;
     public float dmg = 10f;
 
-    private Transform target;
+    public Transform target;
 
-
-    private void Start()
-    {
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-    }
 
 
     void Update()
     {
+        
         gunPos = gunPos.GetComponent<Transform>();
         
         //check for player
@@ -46,7 +42,6 @@ public class EnemyAI : MonoBehaviour
     {
         transform.LookAt(target);
 
-
         if (Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
@@ -58,8 +53,6 @@ public class EnemyAI : MonoBehaviour
             Bullet.GetComponent<Rigidbody>().AddForce(gunPos.forward * bulletSpeed, ForceMode.Impulse);
             Bullet.GetComponent<Bullet>().dmg = dmg;
         }
-       
-
-
+        
     }
 }
