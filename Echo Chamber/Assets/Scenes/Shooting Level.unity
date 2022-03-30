@@ -607,6 +607,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 134311610}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &152083848
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 152083849}
+  m_Layer: 0
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &152083849
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152083848}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.428, z: 1.073}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1031585738}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &173253639
 GameObject:
   m_ObjectHideFlags: 0
@@ -1818,7 +1849,7 @@ GameObject:
   - component: {fileID: 558294627}
   - component: {fileID: 558294626}
   - component: {fileID: 558294630}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyTemp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2121,7 +2152,7 @@ GameObject:
   - component: {fileID: 627370535}
   - component: {fileID: 627370534}
   - component: {fileID: 627370538}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyTemp (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3468,7 +3499,7 @@ GameObject:
   - component: {fileID: 1003604147}
   - component: {fileID: 1003604146}
   - component: {fileID: 1003604150}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyTemp (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3866,6 +3897,7 @@ Transform:
   - {fileID: 2065127444}
   - {fileID: 505158426}
   - {fileID: 1137040691}
+  - {fileID: 152083849}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3885,6 +3917,12 @@ MonoBehaviour:
   range: 100
   fireRate: 5
   fpsCam: {fileID: 2065127443}
+  swingRate: 5
+  attackRange: 1
+  attackPoint: {fileID: 152083849}
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &1054680958
 GameObject:
   m_ObjectHideFlags: 0
@@ -3898,7 +3936,7 @@ GameObject:
   - component: {fileID: 1054680960}
   - component: {fileID: 1054680959}
   - component: {fileID: 1054680963}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyTemp (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5406,7 +5444,7 @@ GameObject:
   - component: {fileID: 1476697359}
   - component: {fileID: 1476697363}
   - component: {fileID: 1476697364}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyTemp (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6029,7 +6067,7 @@ GameObject:
   - component: {fileID: 1699855809}
   - component: {fileID: 1699855808}
   - component: {fileID: 1699855812}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyTemp (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7194,7 +7232,7 @@ GameObject:
   - component: {fileID: 2119420038}
   - component: {fileID: 2119420037}
   - component: {fileID: 2119420041}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyTemp (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
