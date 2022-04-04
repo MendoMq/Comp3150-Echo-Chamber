@@ -15,10 +15,12 @@ public class PlayerAttack : MonoBehaviour
 
     public Transform attackPoint;
     public LayerMask enemyLayers;
+    public GameObject BulletTracer;
+    public Transform tracerPoint;
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire)
+        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
         {
             nextTimeToFire = Time.time + 1f/fireRate;
             Shoot();
@@ -42,6 +44,10 @@ public class PlayerAttack : MonoBehaviour
             {
                 target.TakeDamage(dmg);
             }
+
+            GameObject clone = Instantiate(BulletTracer, tracerPoint.position, Quaternion.identity);
+            LineRenderer line = clone.GetComponent<LineRenderer>();
+            line.SetPosition(1,hit.point-tracerPoint.position);
         }
     }
 
