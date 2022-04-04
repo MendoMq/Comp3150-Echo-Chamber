@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9209564610130646935}
   - component: {fileID: 7998303826486987076}
-  - component: {fileID: 4461059831929631017}
+  - component: {fileID: 4262077733209484820}
   m_Layer: 0
   m_Name: BulletTracer
   m_TagString: Untagged
@@ -132,7 +132,7 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 0
   m_Loop: 0
---- !u!114 &4461059831929631017
+--- !u!114 &4262077733209484820
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5609862414924260140}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7274d72231353240b79e621118ec152, type: 3}
+  m_Script: {fileID: 11500000, guid: 548234fa33dbec84981ada6fe0a0d065, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   blendMultiplier: 2

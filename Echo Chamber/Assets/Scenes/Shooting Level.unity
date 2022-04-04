@@ -3924,6 +3924,8 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 128
+  BulletTracer: {fileID: 5609862414924260140, guid: c3dec66633eb6644586c2bfa6e5b6045, type: 3}
+  tracerPoint: {fileID: 1357886640}
 --- !u!1 &1054680958
 GameObject:
   m_ObjectHideFlags: 0
