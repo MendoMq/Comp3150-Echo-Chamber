@@ -662,11 +662,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a412fd57d1245bd40aee75d3b3fdf3f4, type: 3}
---- !u!4 &1163211039 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9221470317277997596, guid: ecbeb3df7d73709429d1c9f3a89fa7f4, type: 3}
-  m_PrefabInstance: {fileID: 9221470317220947301}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1804358085
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1145,6 +1140,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyTemp
       objectReference: {fileID: 0}
+    - target: {fileID: 7480918464971121153, guid: b105d0c728d3c52499222a0af3644e88, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 7480918464971121167, guid: b105d0c728d3c52499222a0af3644e88, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1202,10 +1201,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 9221470316854663733, guid: ecbeb3df7d73709429d1c9f3a89fa7f4, type: 3}
-      propertyPath: tracerPoint
-      value: 
-      objectReference: {fileID: 1163211039}
     - target: {fileID: 9221470316854663741, guid: ecbeb3df7d73709429d1c9f3a89fa7f4, type: 3}
       propertyPath: m_RootOrder
       value: 3

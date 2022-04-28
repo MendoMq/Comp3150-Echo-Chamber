@@ -36,8 +36,10 @@ public class PlayerAttack : MonoBehaviour
     void Shoot()
     {
         RaycastHit hit;
+
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
+
 
             Target target = hit.transform.GetComponent<Target>();
             if (target != null)
