@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class MouseLookEcho : MonoBehaviour
 {
+    
 
     Vector2 rotation = Vector2.zero;
 	public float speed = 3;
     public GameObject VisionBubble;
     void Update()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         /*
         if(Input.GetKey("w")){
             transform.Translate(Vector3.forward * Time.deltaTime * 4);
@@ -30,7 +32,7 @@ public class MouseLookEcho : MonoBehaviour
             transform.Translate(Vector3.down * Time.deltaTime * 4);
         }
         */
-        if(Input.GetMouseButtonDown(0)){
+        if (Input.GetMouseButtonDown(0)){
             GameObject clone;
             clone = Instantiate(VisionBubble, transform.position+(transform.forward*2.5f), Quaternion.identity);
         }
@@ -38,6 +40,7 @@ public class MouseLookEcho : MonoBehaviour
 
         rotation.y += Input.GetAxis ("Mouse X");
 		rotation.x += -Input.GetAxis ("Mouse Y");
+        rotation.x = Mathf.Clamp(rotation.x, -30f, 30f);
 		transform.eulerAngles = (Vector2)rotation * speed;
     }
 }
