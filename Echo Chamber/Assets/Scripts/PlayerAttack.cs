@@ -16,7 +16,7 @@ public class PlayerAttack : MonoBehaviour
     public Transform attackPoint;
     public LayerMask enemyLayers;
     public GameObject BulletTracer;
-    public Transform tracerPoint;
+    public GameObject gun;
 
     void Update()
     {
@@ -47,9 +47,10 @@ public class PlayerAttack : MonoBehaviour
                 target.TakeDamage(dmg);
             }
 
-            GameObject clone = Instantiate(BulletTracer, tracerPoint.position, Quaternion.identity);
+            gun.GetComponent<Animation>().Play("GunShoot");
+            GameObject clone = Instantiate(BulletTracer, gun.transform.position, Quaternion.identity);
             LineRenderer line = clone.GetComponent<LineRenderer>();
-            line.SetPosition(1,hit.point-tracerPoint.position);
+            line.SetPosition(1,hit.point-gun.transform.position);
         }
     }
 

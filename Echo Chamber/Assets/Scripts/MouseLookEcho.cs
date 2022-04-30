@@ -32,9 +32,9 @@ public class MouseLookEcho : MonoBehaviour
             transform.Translate(Vector3.down * Time.deltaTime * 4);
         }
         */
-        if (Input.GetMouseButtonDown(0)){
+        if (Input.GetMouseButtonDown(1)){
             GameObject clone;
-            clone = Instantiate(VisionBubble, transform.position+(transform.forward*2.5f), Quaternion.identity);
+            clone = Instantiate(VisionBubble, transform.position+(transform.forward*3f), Quaternion.identity);
         }
 
 
