@@ -17,6 +17,8 @@ public class PlayerAttack : MonoBehaviour
     public LayerMask enemyLayers;
     public GameObject BulletTracer;
     public GameObject gun;
+    public GameObject HitEffect;
+    public GameObject MissEffect;
 
     void Update()
     {
@@ -24,7 +26,8 @@ public class PlayerAttack : MonoBehaviour
         {
             nextTimeToFire = Time.time + 1f/fireRate;
             Shoot();
-        }
+        } 
+        
 
         if (Input.GetButtonDown("Fire2") && Time.time >= nextTimeToSwing)
         {
@@ -45,6 +48,9 @@ public class PlayerAttack : MonoBehaviour
             if (target != null)
             {
                 target.TakeDamage(dmg);
+                GameObject HitClone = Instantiate(HitEffect, hit.point, Quaternion.identity);
+            }else{
+                GameObject MissClone = Instantiate(MissEffect, hit.point, Quaternion.identity);
             }
 
             gun.GetComponent<Animation>().Play("GunShoot");
