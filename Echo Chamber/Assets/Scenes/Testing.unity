@@ -1169,6 +1169,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 9221470316854663732, guid: ecbeb3df7d73709429d1c9f3a89fa7f4, type: 3}
+      propertyPath: ProbePrefab
+      value: 
+      objectReference: {fileID: 8154606063884258434, guid: 0f93de4edd563214e81768da84bcfce3, type: 3}
+    - target: {fileID: 9221470316854663732, guid: ecbeb3df7d73709429d1c9f3a89fa7f4, type: 3}
+      propertyPath: throwThrust
+      value: 7.5
+      objectReference: {fileID: 0}
     - target: {fileID: 9221470316854663733, guid: ecbeb3df7d73709429d1c9f3a89fa7f4, type: 3}
       propertyPath: gun
       value: 
