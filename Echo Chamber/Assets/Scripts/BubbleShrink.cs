@@ -10,6 +10,7 @@ public class BubbleShrink : MonoBehaviour
     public float growTime=1f;
     public float growSpeed=10f;
     public float shrinkSpeed=1.5f;
+    public Transform particleTransform;
     bool growing=true;
     void Update()
     	{
@@ -21,7 +22,7 @@ public class BubbleShrink : MonoBehaviour
 		scaleChange = new Vector3(-shrinkSpeed*Time.deltaTime,-shrinkSpeed*Time.deltaTime,-shrinkSpeed*Time.deltaTime);
 	}
         transform.localScale+=scaleChange;
-
+        particleTransform.localScale+=scaleChange;
     
         if(transform.localScale.x<=0)Destroy(gameObject);
     }

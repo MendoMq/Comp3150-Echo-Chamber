@@ -3897,6 +3897,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VisionBubble
       objectReference: {fileID: 0}
+    - target: {fileID: 7354006487040047749, guid: 8681dac1307e34b4688cd9a338394d87, type: 3}
+      propertyPath: particleTransform
+      value: 
+      objectReference: {fileID: 8164777676778200188, guid: 4bfb4eada81a8d1408dddaa7673c4f5d, type: 3}
     - target: {fileID: 7354006487040047750, guid: 8681dac1307e34b4688cd9a338394d87, type: 3}
       propertyPath: m_RootOrder
       value: 4

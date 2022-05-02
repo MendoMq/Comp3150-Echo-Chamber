@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1f9220864d01f854f8b887a06033a600, type: 2}
+  - {fileID: 2100000, guid: c8857c4afbea81d408774c42dfcb17a4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -144,7 +144,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1f9220864d01f854f8b887a06033a600, type: 2}
+  - {fileID: 2100000, guid: c8857c4afbea81d408774c42dfcb17a4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -228,7 +228,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ee0fe06f717643d4e964cf6656b05f4c, type: 2}
+  - {fileID: 2100000, guid: e602084134c530246ab052156be40ecd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 7354006487040047749}
   - component: {fileID: 7916178528633367065}
   m_Layer: 8
-  m_Name: ProbeBubble
+  m_Name: AntiBubble
   m_TagString: Portal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -331,7 +331,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1f9220864d01f854f8b887a06033a600, type: 2}
+  - {fileID: 2100000, guid: c8857c4afbea81d408774c42dfcb17a4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -485,6 +485,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7354006487040047750}
     m_Modifications:
+    - target: {fileID: 1120035736535630752, guid: 4bfb4eada81a8d1408dddaa7673c4f5d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e602084134c530246ab052156be40ecd, type: 2}
     - target: {fileID: 7480746637086544649, guid: 4bfb4eada81a8d1408dddaa7673c4f5d, type: 3}
       propertyPath: looping
       value: 1
@@ -504,6 +508,10 @@ PrefabInstance:
     - target: {fileID: 7480746637086544649, guid: 4bfb4eada81a8d1408dddaa7673c4f5d, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7480746637086544649, guid: 4bfb4eada81a8d1408dddaa7673c4f5d, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7480746637086544649, guid: 4bfb4eada81a8d1408dddaa7673c4f5d, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b

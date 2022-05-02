@@ -9,6 +9,7 @@ public class MouseLookEcho : MonoBehaviour
     Vector2 rotation = Vector2.zero;
 	public float speed = 3;
     public GameObject ProbePrefab;
+    public GameObject AntiPrefab;
     public float throwThrust;
     void Update()
     {
@@ -38,6 +39,14 @@ public class MouseLookEcho : MonoBehaviour
             clone = Instantiate(ProbePrefab, transform.position+(transform.forward*3f), Quaternion.identity);
             clone.GetComponent<Rigidbody>().AddForce(transform.up * throwThrust*0.75f, ForceMode.Impulse);
             clone.GetComponent<Rigidbody>().AddForce(transform.forward * throwThrust*1.5f, ForceMode.Impulse);
+        }
+
+        if (Input.GetKeyDown("q"))
+        {
+            GameObject clone;
+            clone = Instantiate(AntiPrefab, transform.position + (transform.forward * 3f), Quaternion.identity);
+            clone.GetComponent<Rigidbody>().AddForce(transform.up * throwThrust * 0.75f, ForceMode.Impulse);
+            clone.GetComponent<Rigidbody>().AddForce(transform.forward * throwThrust * 1.5f, ForceMode.Impulse);
         }
 
 

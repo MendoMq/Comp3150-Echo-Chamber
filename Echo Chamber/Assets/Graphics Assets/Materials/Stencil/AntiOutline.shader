@@ -12,14 +12,8 @@ Shader "Custom/VisionBubbleOutline"
     {
         Tags { "RenderType"="Opaque" }
         LOD 200
-
         Stencil{
             Ref 2
-            Comp notequal
-        }
-
-        Stencil{
-            Ref 1
             Comp notequal
         }
 

@@ -420,6 +420,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   ProbePrefab: {fileID: 8154606063884258434, guid: 0f93de4edd563214e81768da84bcfce3, type: 3}
+  AntiPrefab: {fileID: 8154606063884258434, guid: 197552b7726eeb84480e0ee7321ff99a, type: 3}
   throwThrust: 7.5
 --- !u!114 &9221470316854663733
 MonoBehaviour:
