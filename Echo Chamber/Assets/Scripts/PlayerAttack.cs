@@ -21,7 +21,15 @@ public class PlayerAttack : MonoBehaviour
     public GameObject HitEffect;
     public GameObject MissEffect;
 
-    public string gunName = "";
+    public Color pistolColor;
+    public Color smgColor;
+    public Color shotgunColor;
+
+    public GameObject pistolParticle;
+    public GameObject smgParticle;
+    public GameObject shotgunParticle;
+
+    public string gunName = "Pistol";
 
     public int ammo = 100;
 
@@ -40,24 +48,65 @@ public class PlayerAttack : MonoBehaviour
             Fire();
         } 
         
-
         if (Input.GetButtonDown("Fire2") && Time.time >= nextTimeToSwing)
         {
             nextTimeToSwing = Time.time + 1f / swingRate;
             Swing();
         }
 
-        if (ammo == 0)
+        if (ammo <= 0 && gunName!="Pistol")
         {
-            gunName = "";
+            ChangeToPistol();
         }
 
+        if(Input.GetKeyDown("1")){
+            ChangeToPistol();
+        }
+        
+        if(Input.GetKeyDown("2")){
+            if(ammo > 0) ChangeToSmg();
+        }
+        if(Input.GetKeyDown("3")){
+            if(ammo > 0) ChangeToShotgun();
+        }
+    }
+
+    void ChangeToPistol(){
+        dmg = 10f;
+        fireRate = 3f;
+        
+        Material mat = gun.GetComponent<Renderer>().material;
+        mat.color = pistolColor;
+        gunName = "Pistol";
+        GameObject clone = Instantiate(pistolParticle, gun.transform.position, Quaternion.identity);
+        clone.transform.parent = gun.transform;
+    }
+    
+    void ChangeToSmg(){
+        dmg = 5f;
+        fireRate = 8f;
+
+        Material mat = gun.GetComponent<Renderer>().material;
+        mat.color = smgColor;
+        gunName = "SMG";
+        GameObject clone = Instantiate(smgParticle, gun.transform.position, Quaternion.identity);
+        clone.transform.parent = gun.transform;
+    }
+    void ChangeToShotgun(){
+        fireRate = 2f;
+        dmg = 8f;
+
+        Material mat = gun.GetComponent<Renderer>().material;
+        mat.color = shotgunColor;
+        gunName = "Shotgun";
+        GameObject clone = Instantiate(shotgunParticle, gun.transform.position, Quaternion.identity);
+        clone.transform.parent = gun.transform;
     }
 
 
     void Fire()
     {
-        if (gunName == "")
+        if (gunName == "Pistol")
         {
             Shoot();
         }
@@ -74,8 +123,6 @@ public class PlayerAttack : MonoBehaviour
     void Shoot()
     {
         RaycastHit hit;
-        dmg = 10f;
-        fireRate = 5f;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
 
@@ -102,8 +149,6 @@ public class PlayerAttack : MonoBehaviour
         {
             ammo -= 5;
             RaycastHit hit;
-            dmg = 5f;
-            fireRate = 10f;
             if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
             {
 
@@ -129,8 +174,6 @@ public class PlayerAttack : MonoBehaviour
 
     void ShotgunCal()
     {
-        fireRate = 3f;
-        dmg = 15f;
         ammo -= 20;
 
         float spreadX = 0.0f;

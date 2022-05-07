@@ -1241,14 +1241,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3a6ee8b6c5e3f6843abf7717cff0a4da, type: 2}
-    - target: {fileID: 5135596292697479944, guid: ecbeb3df7d73709429d1c9f3a89fa7f4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 80.64001
-      objectReference: {fileID: 0}
-    - target: {fileID: 5516231547200843950, guid: ecbeb3df7d73709429d1c9f3a89fa7f4, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: cce2a1aa74db0274e86bedf8635beec8, type: 2}
     - target: {fileID: 9221470316854663722, guid: ecbeb3df7d73709429d1c9f3a89fa7f4, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1257,14 +1249,6 @@ PrefabInstance:
       propertyPath: anim
       value: 
       objectReference: {fileID: 7400000, guid: 1ff6bac13bd0f8e4a8597fb8c0558696, type: 2}
-    - target: {fileID: 9221470316854663733, guid: ecbeb3df7d73709429d1c9f3a89fa7f4, type: 3}
-      propertyPath: verticaleSpread
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9221470316854663733, guid: ecbeb3df7d73709429d1c9f3a89fa7f4, type: 3}
-      propertyPath: horizontalSpread
-      value: 0.3
-      objectReference: {fileID: 0}
     - target: {fileID: 9221470316854663741, guid: ecbeb3df7d73709429d1c9f3a89fa7f4, type: 3}
       propertyPath: m_RootOrder
       value: 3

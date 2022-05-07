@@ -36,7 +36,7 @@ public class MouseLookEcho : MonoBehaviour
         */
         if (Input.GetMouseButtonDown(1)){
             GameObject clone;
-            clone = Instantiate(ProbePrefab, transform.position+(transform.forward*3f), Quaternion.identity);
+            clone = Instantiate(ProbePrefab, transform.position+(transform.forward*1f), Quaternion.identity);
             clone.GetComponent<Rigidbody>().AddForce(transform.up * throwThrust*0.75f, ForceMode.Impulse);
             clone.GetComponent<Rigidbody>().AddForce(transform.forward * throwThrust*1.5f, ForceMode.Impulse);
         }
@@ -44,7 +44,7 @@ public class MouseLookEcho : MonoBehaviour
         if (Input.GetKeyDown("q"))
         {
             GameObject clone;
-            clone = Instantiate(AntiPrefab, transform.position + (transform.forward * 3f), Quaternion.identity);
+            clone = Instantiate(AntiPrefab, transform.position + (transform.forward * 1f), Quaternion.identity);
             clone.GetComponent<Rigidbody>().AddForce(transform.up * throwThrust * 0.75f, ForceMode.Impulse);
             clone.GetComponent<Rigidbody>().AddForce(transform.forward * throwThrust * 1.5f, ForceMode.Impulse);
         }
