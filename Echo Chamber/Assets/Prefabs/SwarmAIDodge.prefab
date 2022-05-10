@@ -51,6 +51,7 @@ MonoBehaviour:
   minDistance: 10
   dmg: 0
   aiAgro: 0
+  explosionEffect: {fileID: 0}
 --- !u!1001 &2398967961871368145
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -180,3 +181,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  explosionEffect: {fileID: 0}

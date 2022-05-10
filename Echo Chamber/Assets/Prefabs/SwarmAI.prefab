@@ -115,6 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
+  explosionEffect: {fileID: 3090922642487001161, guid: 66c3c291f9fb87e4eac5fe2e1c586d7d, type: 3}
 --- !u!114 &8010536011260401815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,7 +131,10 @@ MonoBehaviour:
   target: {fileID: 0}
   speed: 4
   triggerLength: 25
+  minDistance: 2
   dmg: 0
+  aiAgro: 0
+  explosionEffect: {fileID: 0}
 --- !u!54 &8010536011260401809
 Rigidbody:
   m_ObjectHideFlags: 0

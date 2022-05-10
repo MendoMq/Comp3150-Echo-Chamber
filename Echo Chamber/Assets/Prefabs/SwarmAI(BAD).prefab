@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d3a02d2ad3ccd9b499ae0832649752bb, type: 3}
       propertyPath: m_Name
-      value: Flyingenemy
+      value: SwarmAI(BAD)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3a02d2ad3ccd9b499ae0832649752bb, type: 3}
@@ -104,6 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  explosionEffect: {fileID: 0}
 --- !u!114 &1899316584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,4 +120,7 @@ MonoBehaviour:
   target: {fileID: 0}
   speed: 4
   triggerLength: 25
+  minDistance: 2
   dmg: 0
+  aiAgro: 0
+  explosionEffect: {fileID: 0}
