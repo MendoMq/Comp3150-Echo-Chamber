@@ -10,7 +10,6 @@ public class SwarmAI : MonoBehaviour
     public float minDistance = 2;
     public float dmg;
     public bool aiAgro = false;
-    public GameObject explosionEffect;
 
     int swapDir = 1;
     float timer = 0;
