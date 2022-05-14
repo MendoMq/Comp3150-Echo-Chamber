@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7ec60d1c3a53974a9bab71515fca439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 40
   deathEffect: {fileID: 3090922642487001161, guid: 66c3c291f9fb87e4eac5fe2e1c586d7d, type: 3}
   keepOnDeath: 0
 --- !u!114 &7480918464971121152
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerLength: 10
   speed: 5
-  bullet: {fileID: 861169423206453080, guid: fadc975a065c8ba4ba3923592fef2f83, type: 3}
+  bullet: {fileID: 3221473088960594144, guid: 1af4c13cde80b1c4da1bbaafb8e0cf05, type: 3}
   gunPos: {fileID: 7480918465297090742}
   bulletSpeed: 30
   fireRate: 0.5
