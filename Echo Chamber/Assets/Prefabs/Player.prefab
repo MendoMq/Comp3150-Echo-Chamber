@@ -472,7 +472,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
-  explosionEffect: {fileID: 0}
+  deathEffect: {fileID: 0}
   keepOnDeath: 1
 --- !u!1001 &4670220594916539619
 PrefabInstance:
