@@ -6,20 +6,24 @@ public class Target : MonoBehaviour
 {
 
     public float health = 50f;
-    public GameObject explosionEffect;
+    public GameObject deathEffect;
+    public bool keepOnDeath;
     
     public void TakeDamage(float amount)
     {
         health -= amount;
-        if (health <= 0f)
+        if (health <= 0f && !keepOnDeath)
         {
             Die();
+        }
+        if(health <= 0f && keepOnDeath){
+            Debug.Log("Player Died");
         }
     }
 
     void Die()
     {
-        GameObject Explosion = Instantiate(explosionEffect, transform.position, Quaternion.identity);
+        GameObject Effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
    

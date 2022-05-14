@@ -15,6 +15,13 @@ public class SwarmAI : MonoBehaviour
     float timer = 0;
     float swapTime = 1f;
 
+    float shootTimer = 1.5f;
+    float shootTime = 4f;
+    float waitTime = 2f;
+    public GameObject SwarmProjectilePrefab;
+    public GameObject EyeGameObject;
+    public GameObject ShootParticle;
+
 
     void Start()
     {
@@ -45,8 +52,21 @@ public class SwarmAI : MonoBehaviour
                 timer = 0;
             }
 
-            timer += Time.deltaTime;
+            if(Vector3.Distance(target.position, transform.position) < triggerLength){
+                if(shootTimer>= shootTime){
+                    Shoot();
+                    ShootParticle.SetActive(true);
+                    shootTimer = 0;
+                    waitTime=2f;
+                }
+                if(shootTimer>= waitTime){
+                    EyeGameObject.SetActive(true);
+                    waitTime=6f;
+                }
+            }
 
+            timer += Time.deltaTime;
+            shootTimer += Time.deltaTime;
         }
 
 
@@ -54,6 +74,10 @@ public class SwarmAI : MonoBehaviour
 
     void SetSwapTime(){
         swapTime = Random.Range(0.5f, 3f);
+    }
+
+    void Shoot(){
+        GameObject clone = Instantiate(SwarmProjectilePrefab, transform.position, Quaternion.identity);
     }
 
     void OnDrawGizmosSelected()

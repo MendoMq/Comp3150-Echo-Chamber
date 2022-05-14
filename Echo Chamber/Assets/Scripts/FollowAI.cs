@@ -11,6 +11,7 @@ public class FollowAI : MonoBehaviour
     public float dmg;
     public bool aiAgro = false;
     public GameObject explosionEffect;
+    public GameObject antiPortalPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,8 @@ public class FollowAI : MonoBehaviour
             if (Vector3.Distance(target.position, transform.position) <= minDistance)
             {
                 GameObject Explosion = Instantiate(explosionEffect, transform.position, Quaternion.identity);
+                GameObject clone = Instantiate(antiPortalPrefab, transform.position, Quaternion.identity); 
+                target.gameObject.GetComponent<Target>().TakeDamage(dmg);
                 Destroy(gameObject);
             }
 
