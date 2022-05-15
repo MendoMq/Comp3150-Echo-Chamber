@@ -17,18 +17,16 @@ public class EnemyAI : MonoBehaviour
 
     public Transform target;
 
-
+    void Start(){
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
     void Update()
     {
-        
-        gunPos = gunPos.GetComponent<Transform>();
-        
         //check for player
         if (Vector3.Distance(target.position, transform.position) < triggerLength)
         {
             shoot();
-            
         }
     }
 
@@ -45,7 +43,7 @@ public class EnemyAI : MonoBehaviour
         if (Time.time >= nextFire)
         {
             nextFire = Time.time + fireRate;
-            GameObject Bullet = Instantiate(bullet, transform.position, Quaternion.identity);
+            GameObject Bullet = Instantiate(bullet, gunPos.position, Quaternion.identity);
             Physics.IgnoreCollision(Bullet.GetComponent<Collider>(), gunPos.parent.GetComponent<Collider>());
             Bullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed, ForceMode.Impulse);
             //Bullet.GetComponent<Bullet>().dmg = dmg;
