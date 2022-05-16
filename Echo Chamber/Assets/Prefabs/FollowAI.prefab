@@ -135,7 +135,7 @@ MonoBehaviour:
   speed: 4
   triggerLength: 25
   minDistance: 2
-  dmg: 50
+  dmg: 25
   aiAgro: 0
   explosionEffect: {fileID: 3090922642487001161, guid: 66c3c291f9fb87e4eac5fe2e1c586d7d, type: 3}
   antiPortalPrefab: {fileID: 7354006487040047746, guid: aacefd4dbe814ca4ebe99d62b73fd735, type: 3}

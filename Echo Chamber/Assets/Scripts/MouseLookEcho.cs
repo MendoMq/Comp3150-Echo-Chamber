@@ -7,7 +7,7 @@ public class MouseLookEcho : MonoBehaviour
     
 
     Vector2 rotation = Vector2.zero;
-	public float speed = 3;
+	public float lookSensitivity = 3;
     public GameObject ProbePrefab;
     public GameObject AntiPrefab;
     public float throwThrust;
@@ -34,14 +34,15 @@ public class MouseLookEcho : MonoBehaviour
             transform.Translate(Vector3.down * Time.deltaTime * 4);
         }
         */
-        if (Input.GetMouseButtonDown(1)){
+        if (Input.GetKeyDown("q"))
+        {
             GameObject clone;
             clone = Instantiate(ProbePrefab, transform.position+(transform.forward*1f), Quaternion.identity);
             clone.GetComponent<Rigidbody>().AddForce(transform.up * throwThrust*0.75f, ForceMode.Impulse);
             clone.GetComponent<Rigidbody>().AddForce(transform.forward * throwThrust*1.5f, ForceMode.Impulse);
         }
 
-        if (Input.GetKeyDown("q"))
+        if (Input.GetKeyDown("e"))
         {
             GameObject clone;
             clone = Instantiate(AntiPrefab, transform.position + (transform.forward * 1f), Quaternion.identity);
@@ -52,7 +53,7 @@ public class MouseLookEcho : MonoBehaviour
 
         rotation.y += Input.GetAxis ("Mouse X");
 		rotation.x += -Input.GetAxis ("Mouse Y");
-        rotation.x = Mathf.Clamp(rotation.x, -30f, 30f);
-		transform.eulerAngles = (Vector2)rotation * speed;
+        rotation.x = Mathf.Clamp(rotation.x, -90f / lookSensitivity, 90f / lookSensitivity);
+		transform.eulerAngles = (Vector2)rotation * lookSensitivity;
     }
 }

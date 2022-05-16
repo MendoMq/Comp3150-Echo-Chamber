@@ -11,7 +11,6 @@ public class PlayerAttack : MonoBehaviour
     public Camera fpsCam;
 
     public float swingRate = 5f;
-    private float nextTimeToSwing = 0f;
     public float attackRange = 30f;
 
     public Transform attackPoint;
@@ -24,10 +23,12 @@ public class PlayerAttack : MonoBehaviour
     public Color pistolColor;
     public Color smgColor;
     public Color shotgunColor;
+    public Color portalColor;
 
     public GameObject pistolParticle;
     public GameObject smgParticle;
     public GameObject shotgunParticle;
+    public GameObject portalParticle;
 
     public string gunName = "Pistol";
 
@@ -48,10 +49,9 @@ public class PlayerAttack : MonoBehaviour
             Fire();
         } 
         
-        if (Input.GetButtonDown("Fire2") && Time.time >= nextTimeToSwing)
+        if (Input.GetButtonDown("Fire2"))
         {
-            nextTimeToSwing = Time.time + 1f / swingRate;
-            Swing();
+            ChangeToPortal();
         }
 
         if (ammo <= 0 && gunName!="Pistol")
@@ -59,19 +59,26 @@ public class PlayerAttack : MonoBehaviour
             ChangeToPistol();
         }
 
-        if(Input.GetKeyDown("1")){
-            ChangeToPistol();
+        if (gunName != "Portal")
+        {
+            if (Input.GetKeyDown("1"))
+            {
+                ChangeToPistol();
+            }
+
+            if (Input.GetKeyDown("2"))
+            {
+                if (ammo > 0) ChangeToSmg();
+            }
+            if (Input.GetKeyDown("3"))
+            {
+                if (ammo > 0) ChangeToShotgun();
+            }
         }
         
-        if(Input.GetKeyDown("2")){
-            if(ammo > 0) ChangeToSmg();
-        }
-        if(Input.GetKeyDown("3")){
-            if(ammo > 0) ChangeToShotgun();
-        }
     }
 
-    void ChangeToPistol(){
+    public void ChangeToPistol(){
         dmg = 10f;
         fireRate = 3f;
         
@@ -101,6 +108,16 @@ public class PlayerAttack : MonoBehaviour
         gunName = "Shotgun";
         GameObject clone = Instantiate(shotgunParticle, gun.transform.position, Quaternion.identity);
         clone.transform.parent = gun.transform;
+    }
+
+    void ChangeToPortal(){
+        if (gunName != "Portal"){
+            Material mat = gun.GetComponent<Renderer>().material;
+            mat.color = portalColor;
+            gunName = "Portal";
+            GameObject clone = Instantiate(portalParticle, gun.transform.position, Quaternion.identity);
+            clone.transform.parent = gun.transform;
+        }
     }
 
 
@@ -145,11 +162,21 @@ public class PlayerAttack : MonoBehaviour
 
     void SMG()
     {
+        float spreadX = 0.0f;
+        float spreadY = 0.0f;
+        float rad = 0.0f;
+
+        rad = Random.Range(0.0f, 360.0f) * Mathf.Rad2Deg;
+        spreadX = Random.Range(0.0f, horizontalSpread / 4.0f) * Mathf.Cos(rad);
+        spreadY = Random.Range(0.0f, verticaleSpread / 4.0f) * Mathf.Sin(rad);
+
+        Vector3 deviation = new Vector3(spreadX, spreadY, 0.0f);
+
         if (ammo > 0)
         {
             ammo -= 5;
             RaycastHit hit;
-            if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
+            if (Physics.Raycast(fpsCam.transform.position, deviation + fpsCam.transform.forward, out hit, range))
             {
 
                 Target target = hit.transform.GetComponent<Target>();
@@ -209,22 +236,6 @@ public class PlayerAttack : MonoBehaviour
             GameObject clone = Instantiate(BulletTracer, gun.transform.position, Quaternion.identity);
             LineRenderer line = clone.GetComponent<LineRenderer>();
             line.SetPosition(1, hit.point - gun.transform.position);
-        }
-    }
-
-
-    void Swing()
-    {
-        Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
-
-        foreach (Collider enemy in hitEnemies)
-        {
-            Debug.Log("We hit" + enemy.name);
-            Target target = enemy.transform.GetComponent<Target>();
-            if (target != null)
-            {
-                target.TakeDamage(dmg);
-            }
         }
     }
 
