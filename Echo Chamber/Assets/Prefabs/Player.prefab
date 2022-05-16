@@ -420,7 +420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7751e04fa31f141990c47a88e27ff1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  lookSensitivity: 3
   ProbePrefab: {fileID: 8154606063884258434, guid: 0f93de4edd563214e81768da84bcfce3, type: 3}
   AntiPrefab: {fileID: 8154606063884258434, guid: 197552b7726eeb84480e0ee7321ff99a, type: 3}
   throwThrust: 7.5
@@ -654,6 +654,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9221470315562036536}
     m_Modifications:
+    - target: {fileID: 1845127416219989348, guid: b867387486e0b834e98940d813cc7381, type: 3}
+      propertyPath: outline
+      value: 
+      objectReference: {fileID: 3246921386573549064}
+    - target: {fileID: 1845127416219989348, guid: b867387486e0b834e98940d813cc7381, type: 3}
+      propertyPath: particles
+      value: 
+      objectReference: {fileID: 786389854072752179}
+    - target: {fileID: 1845127416219989348, guid: b867387486e0b834e98940d813cc7381, type: 3}
+      propertyPath: scaleChange
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1845127416219989348, guid: b867387486e0b834e98940d813cc7381, type: 3}
+      propertyPath: attackScript
+      value: 
+      objectReference: {fileID: 9221470316854663733}
     - target: {fileID: 6645424918583597017, guid: b867387486e0b834e98940d813cc7381, type: 3}
       propertyPath: m_Name
       value: HeldPortal
@@ -668,15 +684,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6645424918583597021, guid: b867387486e0b834e98940d813cc7381, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.2
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 6645424918583597021, guid: b867387486e0b834e98940d813cc7381, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 6645424918583597021, guid: b867387486e0b834e98940d813cc7381, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.2
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 6645424918583597021, guid: b867387486e0b834e98940d813cc7381, type: 3}
       propertyPath: m_LocalPosition.x
@@ -718,10 +734,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.719
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6645424919355045886, guid: b867387486e0b834e98940d813cc7381, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b867387486e0b834e98940d813cc7381, type: 3}
+--- !u!1 &786389854072752179 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8926128323487084996, guid: b867387486e0b834e98940d813cc7381, type: 3}
+  m_PrefabInstance: {fileID: 8157755109996657143}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3246921385734188586 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6645424918583597021, guid: b867387486e0b834e98940d813cc7381, type: 3}
+  m_PrefabInstance: {fileID: 8157755109996657143}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &3246921386573549064 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 6645424919355045887, guid: b867387486e0b834e98940d813cc7381, type: 3}
   m_PrefabInstance: {fileID: 8157755109996657143}
   m_PrefabAsset: {fileID: 0}
