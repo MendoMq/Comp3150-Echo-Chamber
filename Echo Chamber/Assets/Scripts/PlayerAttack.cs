@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    private float dmg = 10f;
+    private float pistolDmg = 10f;
+    private float smgDmg = 5f;
+    private float shotgunDmg = 8f;
+    private float dmg;
+
     public float range = 100f;
     public float fireRate = 5f;
     private float nextTimeToFire = 0f;
@@ -34,6 +38,9 @@ public class PlayerAttack : MonoBehaviour
 
     public int ammo = 100;
 
+    public string booster;
+    public float timer = 10f;
+
     //shotgun var
     public int pelletCount = 5;
     [Range(0.0f, 1.0f)]
@@ -43,6 +50,24 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
+        if (booster == "DamageBoost")
+        {
+            shotgunDmg = 16;
+            pistolDmg = 20f;
+            smgDmg = 10f;
+            timer -= Time.deltaTime;
+            if (timer <= 0.0f)
+            {
+                shotgunDmg = 8f;
+                pistolDmg = 10f;
+                smgDmg = 5f;
+                booster = "";
+                timer = 10f;
+            }
+        }
+
+        
+
         if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
         {
             nextTimeToFire = Time.time + 1f/fireRate;
@@ -79,7 +104,7 @@ public class PlayerAttack : MonoBehaviour
     }
 
     public void ChangeToPistol(){
-        dmg = 10f;
+        dmg = pistolDmg;
         fireRate = 3f;
         
         Material mat = gun.GetComponent<Renderer>().material;
@@ -90,7 +115,7 @@ public class PlayerAttack : MonoBehaviour
     }
     
     void ChangeToSmg(){
-        dmg = 5f;
+        dmg = smgDmg;
         fireRate = 8f;
 
         Material mat = gun.GetComponent<Renderer>().material;
@@ -101,7 +126,7 @@ public class PlayerAttack : MonoBehaviour
     }
     void ChangeToShotgun(){
         fireRate = 2f;
-        dmg = 8f;
+        dmg = shotgunDmg;
 
         Material mat = gun.GetComponent<Renderer>().material;
         mat.color = shotgunColor;
@@ -159,6 +184,8 @@ public class PlayerAttack : MonoBehaviour
             line.SetPosition(1,hit.point-gun.transform.position);
         }
     }
+
+  
 
     void SMG()
     {

@@ -14,6 +14,10 @@ public class PlayerMovement : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
 
+
+    public string booster;
+    public float timer = 10f;
+
     CharacterController cont;
 
     Vector3 velocity;
@@ -27,6 +31,19 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (booster == "SpeedBoost")
+        {
+            speed = 18f;
+            timer -= Time.deltaTime;
+
+            if (timer <= 0.0f)
+            {
+                booster = "";
+                speed = 12f;
+                timer = 10f;
+            }
+        }
+
         isGrounded = cont.isGrounded;
 
         float x = Input.GetAxis("Horizontal");
