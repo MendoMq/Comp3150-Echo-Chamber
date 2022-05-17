@@ -5,7 +5,7 @@ public class PlayerAttack : MonoBehaviour
     private float pistolDmg = 10f;
     private float smgDmg = 5f;
     private float shotgunDmg = 8f;
-    private float dmg;
+
 
     public float range = 100f;
     public float fireRate = 5f;
@@ -41,6 +41,8 @@ public class PlayerAttack : MonoBehaviour
     public string booster;
     public float timer = 10f;
 
+    public bool disabled = false;
+
     //shotgun var
     public int pelletCount = 5;
     [Range(0.0f, 1.0f)]
@@ -72,8 +74,8 @@ public class PlayerAttack : MonoBehaviour
         {
             nextTimeToFire = Time.time + 1f/fireRate;
             Fire();
-        } 
-        
+        }
+
         if (Input.GetButtonDown("Fire2"))
         {
             ChangeToPortal();
@@ -104,7 +106,6 @@ public class PlayerAttack : MonoBehaviour
     }
 
     public void ChangeToPistol(){
-        dmg = pistolDmg;
         fireRate = 3f;
         
         Material mat = gun.GetComponent<Renderer>().material;
@@ -115,7 +116,6 @@ public class PlayerAttack : MonoBehaviour
     }
     
     void ChangeToSmg(){
-        dmg = smgDmg;
         fireRate = 8f;
 
         Material mat = gun.GetComponent<Renderer>().material;
@@ -126,7 +126,6 @@ public class PlayerAttack : MonoBehaviour
     }
     void ChangeToShotgun(){
         fireRate = 2f;
-        dmg = shotgunDmg;
 
         Material mat = gun.GetComponent<Renderer>().material;
         mat.color = shotgunColor;
@@ -136,12 +135,15 @@ public class PlayerAttack : MonoBehaviour
     }
 
     void ChangeToPortal(){
-        if (gunName != "Portal"){
-            Material mat = gun.GetComponent<Renderer>().material;
-            mat.color = portalColor;
-            gunName = "Portal";
-            GameObject clone = Instantiate(portalParticle, gun.transform.position, Quaternion.identity);
-            clone.transform.parent = gun.transform;
+        if (disabled == false) {
+            if (gunName != "Portal") {
+                Debug.Log(disabled);
+                Material mat = gun.GetComponent<Renderer>().material;
+                mat.color = portalColor;
+                gunName = "Portal";
+                GameObject clone = Instantiate(portalParticle, gun.transform.position, Quaternion.identity);
+                clone.transform.parent = gun.transform;
+            }
         }
     }
 
@@ -172,7 +174,7 @@ public class PlayerAttack : MonoBehaviour
             Target target = hit.transform.GetComponent<Target>();
             if (target != null)
             {
-                target.TakeDamage(dmg);
+                target.TakeDamage(pistolDmg);
                 GameObject HitClone = Instantiate(HitEffect, hit.point, Quaternion.identity);
             }else{
                 GameObject MissClone = Instantiate(MissEffect, hit.point, Quaternion.identity);
@@ -209,7 +211,7 @@ public class PlayerAttack : MonoBehaviour
                 Target target = hit.transform.GetComponent<Target>();
                 if (target != null)
                 {
-                    target.TakeDamage(dmg);
+                    target.TakeDamage(smgDmg);
                     GameObject HitClone = Instantiate(HitEffect, hit.point, Quaternion.identity);
                 }
                 else
@@ -252,7 +254,7 @@ public class PlayerAttack : MonoBehaviour
             Target target = hit.transform.GetComponent<Target>();
             if (target != null)
             {
-                target.TakeDamage(dmg);
+                target.TakeDamage(shotgunDmg);
                 GameObject HitClone = Instantiate(HitEffect, hit.point, Quaternion.identity);
             }
             else

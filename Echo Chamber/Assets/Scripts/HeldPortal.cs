@@ -13,6 +13,7 @@ public class HeldPortal : MonoBehaviour
     public float scaleChange = -0.1f;
 
     bool weaponOn=true;
+    public bool disabled = false;
 
     // Update is called once per frame
     void Start()
@@ -24,7 +25,7 @@ public class HeldPortal : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(1) && disabled == false)
         {
             weaponOn = false;
             if(transform.localScale.x < maxScale)

@@ -11,6 +11,8 @@ public class MouseLookEcho : MonoBehaviour
     public GameObject ProbePrefab;
     public GameObject AntiPrefab;
     public float throwThrust;
+
+    public bool disabled = false;
     void Update()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -34,21 +36,25 @@ public class MouseLookEcho : MonoBehaviour
             transform.Translate(Vector3.down * Time.deltaTime * 4);
         }
         */
-        if (Input.GetKeyDown("q"))
+        if (disabled == false)
         {
-            GameObject clone;
-            clone = Instantiate(ProbePrefab, transform.position+(transform.forward*1f), Quaternion.identity);
-            clone.GetComponent<Rigidbody>().AddForce(transform.up * throwThrust*0.75f, ForceMode.Impulse);
-            clone.GetComponent<Rigidbody>().AddForce(transform.forward * throwThrust*1.5f, ForceMode.Impulse);
-        }
+            if (Input.GetKeyDown("q"))
+            {
+                GameObject clone;
+                clone = Instantiate(ProbePrefab, transform.position + (transform.forward * 1f), Quaternion.identity);
+                clone.GetComponent<Rigidbody>().AddForce(transform.up * throwThrust * 0.75f, ForceMode.Impulse);
+                clone.GetComponent<Rigidbody>().AddForce(transform.forward * throwThrust * 1.5f, ForceMode.Impulse);
+            }
 
-        if (Input.GetKeyDown("e"))
-        {
-            GameObject clone;
-            clone = Instantiate(AntiPrefab, transform.position + (transform.forward * 1f), Quaternion.identity);
-            clone.GetComponent<Rigidbody>().AddForce(transform.up * throwThrust * 0.75f, ForceMode.Impulse);
-            clone.GetComponent<Rigidbody>().AddForce(transform.forward * throwThrust * 1.5f, ForceMode.Impulse);
+            if (Input.GetKeyDown("e"))
+            {
+                GameObject clone;
+                clone = Instantiate(AntiPrefab, transform.position + (transform.forward * 1f), Quaternion.identity);
+                clone.GetComponent<Rigidbody>().AddForce(transform.up * throwThrust * 0.75f, ForceMode.Impulse);
+                clone.GetComponent<Rigidbody>().AddForce(transform.forward * throwThrust * 1.5f, ForceMode.Impulse);
+            }
         }
+        
 
 
         rotation.y += Input.GetAxis ("Mouse X");

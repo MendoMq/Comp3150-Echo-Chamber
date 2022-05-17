@@ -36,7 +36,7 @@ public class FollowAI : MonoBehaviour
                 Destroy(gameObject);
             }
 
-                transform.position -= new Vector3(-transform.forward.x * speed * Time.deltaTime, 0, -transform.forward.z * speed * Time.deltaTime);
+            transform.position -= new Vector3(-transform.forward.x * speed * Time.deltaTime, 0, -transform.forward.z * speed * Time.deltaTime);
             transform.LookAt(target);
         }
     }
