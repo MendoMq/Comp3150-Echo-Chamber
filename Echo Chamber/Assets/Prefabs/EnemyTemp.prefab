@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7480918464971121152}
   m_Layer: 7
   m_Name: EnemyTemp
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,6 +116,10 @@ MonoBehaviour:
   health: 40
   deathEffect: {fileID: 3090922642487001161, guid: 66c3c291f9fb87e4eac5fe2e1c586d7d, type: 3}
   keepOnDeath: 0
+  speedBoost: {fileID: 8451325266577323879, guid: d40e0077a87efdc4d999198d5dedc643, type: 3}
+  damageBoost: {fileID: 9095266355169703309, guid: 9f5854c2148f87244b4f4064f1bf39cf, type: 3}
+  shotgun: {fileID: 336182786156552752, guid: fa8d63a1b746a9c48b9d71173ff2f343, type: 3}
+  smg: {fileID: 6532181596722438494, guid: 28171a7ed05a514428b8d0e2a69ea70a, type: 3}
 --- !u!114 &7480918464971121152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,7 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerLength: 20
   speed: 5
-  bullet: {fileID: 3221473088960594144, guid: 1af4c13cde80b1c4da1bbaafb8e0cf05, type: 3}
+  bullet: {fileID: 3221473088960594144, guid: 263abf07b09c08d4fa4befe926e3a5ee, type: 3}
   gunPos: {fileID: 7480918465297090742}
   bulletSpeed: 30
   fireRate: 0.5

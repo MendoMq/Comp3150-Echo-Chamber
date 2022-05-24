@@ -154,6 +154,10 @@ MonoBehaviour:
   health: 20
   deathEffect: {fileID: 7354006487040047746, guid: aacefd4dbe814ca4ebe99d62b73fd735, type: 3}
   keepOnDeath: 0
+  speedBoost: {fileID: 8451325266577323879, guid: d40e0077a87efdc4d999198d5dedc643, type: 3}
+  damageBoost: {fileID: 9095266355169703309, guid: 9f5854c2148f87244b4f4064f1bf39cf, type: 3}
+  shotgun: {fileID: 336182786156552752, guid: fa8d63a1b746a9c48b9d71173ff2f343, type: 3}
+  smg: {fileID: 6532181596722438494, guid: 28171a7ed05a514428b8d0e2a69ea70a, type: 3}
 --- !u!65 &4416693548428380924
 BoxCollider:
   m_ObjectHideFlags: 0

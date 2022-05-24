@@ -8,7 +8,13 @@ public class Target : MonoBehaviour
     public float health = 50f;
     public GameObject deathEffect;
     public bool keepOnDeath;
-    
+
+    //for the item drops
+    public GameObject speedBoost;
+    public GameObject damageBoost;
+    public GameObject shotgun;
+    public GameObject smg;
+
     public void TakeDamage(float amount)
     {
         health -= amount;
@@ -23,6 +29,24 @@ public class Target : MonoBehaviour
 
     void Die()
     {
+        //rnage is set for the number of item that can be dropped not the percent chance of drop rate
+        int randomNo = Random.Range(1,4);
+        if (randomNo == 1)
+        {
+            Instantiate(speedBoost, transform.position, Quaternion.identity);
+        }else if (randomNo == 2)
+        {
+            Instantiate(damageBoost, transform.position, Quaternion.identity);
+        }
+        else if (randomNo == 3)
+        {
+            Instantiate(smg, transform.position, Quaternion.identity);
+        }
+        else if (randomNo == 4)
+        {
+            Instantiate(shotgun, transform.position, Quaternion.identity);
+        }
+
         GameObject Effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }

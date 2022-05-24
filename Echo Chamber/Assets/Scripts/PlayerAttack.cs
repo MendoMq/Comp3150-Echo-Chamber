@@ -90,6 +90,7 @@ public class PlayerAttack : MonoBehaviour
         {
             if (Input.GetKeyDown("1"))
             {
+                Debug.Log("check");
                 ChangeToPistol();
             }
 

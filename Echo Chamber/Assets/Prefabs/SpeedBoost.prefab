@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8451325266577323898}
   - component: {fileID: 8451325266577323877}
   - component: {fileID: 8451325266577323876}
+  - component: {fileID: 536295646}
   m_Layer: 0
   m_Name: SpeedBoost
   m_TagString: Untagged
@@ -97,11 +98,11 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!135 &8451325266577323877
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -128,3 +129,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 0}
+--- !u!65 &536295646
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8451325266577323879}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.617712, y: 0.6495, z: 0.6495}
+  m_Center: {x: 0, y: 0, z: 0}

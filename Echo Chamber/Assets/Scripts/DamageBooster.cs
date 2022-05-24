@@ -7,11 +7,17 @@ public class DamageBooster : MonoBehaviour
 
     public PlayerAttack gunScript;
 
+
+    public void Start()
+    {
+        gunScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttack>();
+    }
+
     void OnTriggerEnter(Collider coll)
     {
         if (coll.gameObject.tag == "Player")
         {
-            gunScript.booster = gameObject.name;
+            gunScript.booster = "DamageBoost";
             Destroy(gameObject);
         }
 
