@@ -116,7 +116,7 @@ public class PlayerAttack : MonoBehaviour
         clone.transform.parent = gun.transform;
     }
     
-    void ChangeToSmg(){
+    public void ChangeToSmg(){
         fireRate = 8f;
 
         Material mat = gun.GetComponent<Renderer>().material;
@@ -125,7 +125,7 @@ public class PlayerAttack : MonoBehaviour
         GameObject clone = Instantiate(smgParticle, gun.transform.position, Quaternion.identity);
         clone.transform.parent = gun.transform;
     }
-    void ChangeToShotgun(){
+    public void ChangeToShotgun(){
         fireRate = 2f;
 
         Material mat = gun.GetComponent<Renderer>().material;
@@ -231,7 +231,7 @@ public class PlayerAttack : MonoBehaviour
 
     void ShotgunCal()
     {
-        ammo -= 20;
+        ammo -= 10;
 
         float spreadX = 0.0f;
         float spreadY = 0.0f;

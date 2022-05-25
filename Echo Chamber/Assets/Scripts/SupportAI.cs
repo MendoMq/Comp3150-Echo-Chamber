@@ -18,10 +18,20 @@ public class SupportAI : MonoBehaviour
     public float slowingSpeed = 6;
     public float normalSpeed;
 
+    public GameObject slowTagPrefab;
+    public GameObject slowTag;
+    public Vector3 startingTransform;
+    public GameObject slowIndicator;
+
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
         normalSpeed = movement.speed;
+        slowTag = Instantiate(slowTagPrefab,transform.position,Quaternion.identity);
+        //slowTag.transform.parent = gameObject.transform;
+        slowTag.SetActive(false);
+        startingTransform = transform.position;
+        slowIndicator.SetActive(false);
     }
 
 
@@ -39,6 +49,13 @@ public class SupportAI : MonoBehaviour
                 handPortal.disabled = true;
                 throwPortal.disabled = true;
                 Handheld.disabled = true;
+
+                slowTag.SetActive(true);
+                LineRenderer line = slowTag.GetComponent<LineRenderer>();
+                line.SetPosition(0,transform.position-startingTransform);
+                line.SetPosition(1,(target.transform.position-transform.position)+(transform.position-startingTransform));
+                slowIndicator.SetActive(true);
+
             }
             else
             {
@@ -46,6 +63,9 @@ public class SupportAI : MonoBehaviour
                 handPortal.disabled = false;
                 throwPortal.disabled = false;
                 Handheld.disabled = false;
+
+                slowTag.SetActive(false);
+                slowIndicator.SetActive(false);
             }
             if (Vector3.Distance(target.position, transform.position) >= 5)
             {
@@ -58,6 +78,15 @@ public class SupportAI : MonoBehaviour
             }
             transform.LookAt(target);
         }
+    }
+
+    public void resetDebuf(){
+        movement.speed = normalSpeed;
+        handPortal.disabled = false;
+        throwPortal.disabled = false;
+        Handheld.disabled = false;
+        slowTag.SetActive(false);
+        slowIndicator.SetActive(false);
     }
 
 

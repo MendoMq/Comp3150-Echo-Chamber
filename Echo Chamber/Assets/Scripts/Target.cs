@@ -30,7 +30,7 @@ public class Target : MonoBehaviour
     void Die()
     {
         //rnage is set for the number of item that can be dropped not the percent chance of drop rate
-        int randomNo = Random.Range(1,4);
+        int randomNo = Random.Range(1,16);
         if (randomNo == 1)
         {
             Instantiate(speedBoost, transform.position, Quaternion.identity);
@@ -40,12 +40,16 @@ public class Target : MonoBehaviour
         }
         else if (randomNo == 3)
         {
-            Instantiate(smg, transform.position, Quaternion.identity);
+            GameObject clone = Instantiate(smg, transform.position, Quaternion.identity);
+            clone.GetComponent<GunScript>().upgradeID = 0;
         }
         else if (randomNo == 4)
         {
-            Instantiate(shotgun, transform.position, Quaternion.identity);
+            GameObject clone = Instantiate(shotgun, transform.position, Quaternion.identity);
+            clone.GetComponent<GunScript>().upgradeID = 1;
         }
+
+        if(gameObject.GetComponent<SupportAI>() != null)gameObject.GetComponent<SupportAI>().resetDebuf();
 
         GameObject Effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);

@@ -5,6 +5,7 @@ using UnityEngine;
 public class GunScript : MonoBehaviour
 {
     public PlayerAttack gunScript;
+    public int upgradeID;
 
     public void Start()
     {
@@ -15,8 +16,12 @@ public class GunScript : MonoBehaviour
     {
         if (coll.gameObject.tag == "Player")
         {
-            gunScript.gunName = gameObject.name;
-            gunScript.ammo = 1000;
+            if(upgradeID == 0){
+                gunScript.ChangeToSmg();
+            } else if(upgradeID == 1){
+                gunScript.ChangeToShotgun();
+            }
+            gunScript.ammo = 100;
             Destroy(gameObject);
         }
         

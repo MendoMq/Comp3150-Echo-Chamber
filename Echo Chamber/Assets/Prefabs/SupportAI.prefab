@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 686132651459525615}
   m_Layer: 0
   m_Name: SupportAI
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,6 +126,10 @@ MonoBehaviour:
   movement: {fileID: 0}
   slowingSpeed: 6
   normalSpeed: 0
+  slowTagPrefab: {fileID: 5609862414924260140, guid: c66846ee5f406024699959cd861fedb1, type: 3}
+  slowTag: {fileID: 0}
+  startingTransform: {x: 0, y: 0, z: 0}
+  slowIndicator: {fileID: 0}
 --- !u!114 &686132651459525612
 MonoBehaviour:
   m_ObjectHideFlags: 0
