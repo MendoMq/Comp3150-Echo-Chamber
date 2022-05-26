@@ -19,9 +19,10 @@ public class SupportAI : MonoBehaviour
     public float normalSpeed;
 
     public GameObject slowTagPrefab;
-    public GameObject slowTag;
-    public Vector3 startingTransform;
+    GameObject slowTag;
+    Vector3 startingTransform;
     public GameObject slowIndicator;
+    public GameObject eyeObject;
 
     void Start()
     {
@@ -52,7 +53,7 @@ public class SupportAI : MonoBehaviour
 
                 slowTag.SetActive(true);
                 LineRenderer line = slowTag.GetComponent<LineRenderer>();
-                line.SetPosition(0,transform.position-startingTransform);
+                line.SetPosition(0,eyeObject.transform.position-startingTransform);
                 line.SetPosition(1,(target.transform.position-transform.position)+(transform.position-startingTransform));
                 slowIndicator.SetActive(true);
 
