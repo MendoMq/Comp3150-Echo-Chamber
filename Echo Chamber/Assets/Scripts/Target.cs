@@ -14,12 +14,14 @@ public class Target : MonoBehaviour
     public GameObject damageBoost;
     public GameObject shotgun;
     public GameObject smg;
+    bool dead=false;
 
     public void TakeDamage(float amount)
     {
         health -= amount;
-        if (health <= 0f && !keepOnDeath)
+        if (health <= 0f && !keepOnDeath && !dead)
         {
+            dead =true;
             Die();
         }
         if(health <= 0f && keepOnDeath){

@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DoorMat
+  m_Name: DoorMatBlue
   m_Shader: {fileID: 4800000, guid: ec3edeef807a53248ab69f0faebe1ac7, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 2
@@ -74,6 +74,6 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 0.92855203, b: 0, a: 1}
-    - _EmissionColor: {r: 1, g: 0.84687346, b: 0, a: 1}
+    - _Color: {r: 0, g: 0.38247323, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0.12213881, b: 1, a: 1}
   m_BuildTextureStacks: []
