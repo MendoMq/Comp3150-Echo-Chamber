@@ -11,6 +11,7 @@ public class MouseLookEcho : MonoBehaviour
     public GameObject ProbePrefab;
     public GameObject AntiPrefab;
     public float throwThrust;
+    public float timer = 4f;
 
     public bool disabled = false;
     void Update()
@@ -44,6 +45,7 @@ public class MouseLookEcho : MonoBehaviour
                 clone = Instantiate(ProbePrefab, transform.position + (transform.forward * 1f), Quaternion.identity);
                 clone.GetComponent<Rigidbody>().AddForce(transform.up * throwThrust * 0.75f, ForceMode.Impulse);
                 clone.GetComponent<Rigidbody>().AddForce(transform.forward * throwThrust * 1.5f, ForceMode.Impulse);
+                disabled = true;
             }
 
             if (Input.GetKeyDown("e"))
@@ -52,6 +54,16 @@ public class MouseLookEcho : MonoBehaviour
                 clone = Instantiate(AntiPrefab, transform.position + (transform.forward * 1f), Quaternion.identity);
                 clone.GetComponent<Rigidbody>().AddForce(transform.up * throwThrust * 0.75f, ForceMode.Impulse);
                 clone.GetComponent<Rigidbody>().AddForce(transform.forward * throwThrust * 1.5f, ForceMode.Impulse);
+                disabled = true;
+            }
+        }
+        else
+        {
+            timer -= Time.deltaTime;
+            if (timer <= 0.0f)
+            {
+                disabled = false;
+                timer = 5f;
             }
         }
         
