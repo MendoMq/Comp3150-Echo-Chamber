@@ -1,4 +1,4 @@
-Shader "Custom/VisionBubbleOutline"
+Shader "Custom/DoorShader"
 {
     Properties
     {
@@ -12,9 +12,9 @@ Shader "Custom/VisionBubbleOutline"
     {
         Tags { "RenderType"="Opaque" }
         LOD 200
-        
+
         Stencil{
-            Ref 2
+            Ref 3
             Comp notequal
         }
 

@@ -138,7 +138,6 @@ public class PlayerAttack : MonoBehaviour
     void ChangeToPortal(){
         if (disabled == false) {
             if (gunName != "Portal") {
-                Debug.Log(disabled);
                 Material mat = gun.GetComponent<Renderer>().material;
                 mat.color = portalColor;
                 gunName = "Portal";
