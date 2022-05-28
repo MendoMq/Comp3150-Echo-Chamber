@@ -15,10 +15,15 @@ public class Target : MonoBehaviour
     public GameObject shotgun;
     public GameObject smg;
     bool dead=false;
+    public HealthBar healthBar;
 
     public void TakeDamage(float amount)
     {
         health -= amount;
+        if(this.gameObject.tag == "Player")
+        {
+            healthBar.SetHealth(health);
+        }
         if (health <= 0f && !keepOnDeath && !dead)
         {
             dead =true;
