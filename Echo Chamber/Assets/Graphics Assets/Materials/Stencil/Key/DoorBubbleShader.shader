@@ -1,4 +1,4 @@
-Shader "Custom/AntiShader"
+Shader "Custom/DoorBubbleShader"
 {
     SubShader
     {
@@ -7,9 +7,9 @@ Shader "Custom/AntiShader"
             ColorMask 0
             ZWrite off
             cull off
-            
+
             Stencil{
-                Ref 2
+                Ref 3
                 Comp always
                 Pass replace
             }

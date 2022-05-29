@@ -14,12 +14,20 @@ public class Target : MonoBehaviour
     public GameObject damageBoost;
     public GameObject shotgun;
     public GameObject smg;
+    bool dead=false;
+    public HealthBar healthBar;
+    public bool drops = true;
 
     public void TakeDamage(float amount)
     {
         health -= amount;
-        if (health <= 0f && !keepOnDeath)
+        if(this.gameObject.tag == "Player")
         {
+            healthBar.SetHealth(health);
+        }
+        if (health <= 0f && !keepOnDeath && !dead)
+        {
+            dead =true;
             Die();
         }
         if(health <= 0f && keepOnDeath){
@@ -29,26 +37,28 @@ public class Target : MonoBehaviour
 
     void Die()
     {
-        //rnage is set for the number of item that can be dropped not the percent chance of drop rate
-        int randomNo = Random.Range(1,16);
-        if (randomNo == 1)
-        {
-            Instantiate(speedBoost, transform.position, Quaternion.identity);
-        }else if (randomNo == 2)
-        {
-            Instantiate(damageBoost, transform.position, Quaternion.identity);
+        if(drops){
+            //rnage is set for the number of item that can be dropped not the percent chance of drop rate
+            int randomNo = Random.Range(1,16);
+            if (randomNo == 1)
+            {
+                Instantiate(speedBoost, transform.position, Quaternion.identity);
+            }else if (randomNo == 2)
+            {
+                Instantiate(damageBoost, transform.position, Quaternion.identity);
+            }
+            else if (randomNo == 3)
+            {
+                GameObject clone = Instantiate(smg, transform.position, Quaternion.identity);
+                clone.GetComponent<GunScript>().upgradeID = 0;
+            }
+            else if (randomNo == 4)
+            {
+                GameObject clone = Instantiate(shotgun, transform.position, Quaternion.identity);
+                clone.GetComponent<GunScript>().upgradeID = 1;
+            }
         }
-        else if (randomNo == 3)
-        {
-            GameObject clone = Instantiate(smg, transform.position, Quaternion.identity);
-            clone.GetComponent<GunScript>().upgradeID = 0;
-        }
-        else if (randomNo == 4)
-        {
-            GameObject clone = Instantiate(shotgun, transform.position, Quaternion.identity);
-            clone.GetComponent<GunScript>().upgradeID = 1;
-        }
-
+        
         if(gameObject.GetComponent<SupportAI>() != null)gameObject.GetComponent<SupportAI>().resetDebuf();
 
         GameObject Effect = Instantiate(deathEffect, transform.position, Quaternion.identity);

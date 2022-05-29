@@ -1,4 +1,4 @@
-Shader "Custom/AntiShader"
+Shader "Custom/EndEchoShader"
 {
     SubShader
     {
@@ -7,12 +7,18 @@ Shader "Custom/AntiShader"
             ColorMask 0
             ZWrite off
             cull off
-            
+
             Stencil{
                 Ref 2
+                Comp notequal
+            }
+
+            Stencil{
+                Ref 1
                 Comp always
                 Pass replace
             }
+
         }
     }
 }

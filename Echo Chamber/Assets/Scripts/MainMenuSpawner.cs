@@ -6,7 +6,7 @@ public class MainMenuSpawner : MonoBehaviour
 {
 
     public GameObject bubble;
-    public float timer = 5f;
+    public float timer = 10f;
 
     void Update()
     {
@@ -14,7 +14,7 @@ public class MainMenuSpawner : MonoBehaviour
 
         if (timer <= 0.0f)
         {
-            timer = 5f;
+            timer = 10f;
             Spawn();
         }
     }
@@ -22,11 +22,6 @@ public class MainMenuSpawner : MonoBehaviour
 
     public void Spawn()
     {
-        int randomNo = Random.Range(1, 5);
-        if (randomNo == 3)
-        {
             Instantiate(bubble, transform.position, Quaternion.identity);
-        }
-
     }
 }

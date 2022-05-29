@@ -1,21 +1,24 @@
-Shader "Custom/VisionBubbleOutline"
+Shader "Custom/EndEchoDrawShader"
 {
     Properties
     {
         _Color ("Color", Color) = (1,1,1,1)
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
-        _Glossiness ("Smoothness", Range(0,1)) = 0.5
-        _Metallic ("Metallic", Range(0,1)) = 0.0
         [HDR] _EmissionColor("Color", Color) = (0,0,0)
     }
     SubShader
     {
         Tags { "RenderType"="Opaque" }
         LOD 200
-        
         Stencil{
             Ref 2
             Comp notequal
+        }
+
+        Stencil{
+            Ref 1
+            Comp always
+            Pass replace
         }
 
         CGPROGRAM
@@ -32,8 +35,6 @@ Shader "Custom/VisionBubbleOutline"
             float2 uv_MainTex;
         };
 
-        half _Glossiness;
-        half _Metallic;
         fixed4 _Color;
         fixed4 _EmissionColor;
 
@@ -49,10 +50,7 @@ Shader "Custom/VisionBubbleOutline"
             // Albedo comes from a texture tinted by color
             fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
             o.Albedo = c.rgb;
-            // Metallic and smoothness come from slider variables
-            o.Metallic = _Metallic;
             o.Emission = c.rgb * tex2D(_MainTex, IN.uv_MainTex).a * _EmissionColor;
-            o.Smoothness = _Glossiness;
             o.Alpha = c.a;
         }
         ENDCG
