@@ -5,11 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneObject : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
+    public int levelIndex=1;
+    public GameObject screenFade;
 
     // Update is called once per frame
     void Update()
@@ -21,7 +19,12 @@ public class SceneObject : MonoBehaviour
 
     public void LoadLevel(int n){
         Debug.Log("Loading Level "+n);
+        levelIndex = n;
         if(n == 1)SceneManager.LoadSceneAsync("IntroModelledLevel");
+    }
+
+    public void RestartLevel(){
+        LoadLevel(levelIndex);
     }
 
     public void Quit(){

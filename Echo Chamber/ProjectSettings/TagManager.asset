@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Portal
   - Enemy
+  - SceneObject
   layers:
   - Default
   - TransparentFX

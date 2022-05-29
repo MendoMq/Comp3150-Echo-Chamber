@@ -81,7 +81,7 @@ public class PlayerAttack : MonoBehaviour
             ChangeToPortal();
         }
 
-        if (ammo <= 0 && gunName!="Pistol")
+        if (ammo <= 0 && gunName!="Pistol" && gunName!="Portal")
         {
             ChangeToPistol();
         }
