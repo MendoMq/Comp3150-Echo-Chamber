@@ -51,6 +51,12 @@ MonoBehaviour:
   health: 1
   deathEffect: {fileID: 3090922642487001161, guid: 7255b53551054f546a5ec9ced9f0b6b8, type: 3}
   keepOnDeath: 0
+  speedBoost: {fileID: 0}
+  damageBoost: {fileID: 0}
+  shotgun: {fileID: 0}
+  smg: {fileID: 0}
+  healthBar: {fileID: 0}
+  drops: 0
 --- !u!54 &1554805216213351997
 Rigidbody:
   m_ObjectHideFlags: 0
