@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Target : MonoBehaviour
 {
@@ -32,6 +33,7 @@ public class Target : MonoBehaviour
         }
         if(health <= 0f && keepOnDeath){
             Debug.Log("Player Died");
+            Die();
         }
     }
 
@@ -60,6 +62,11 @@ public class Target : MonoBehaviour
         }
         
         if(gameObject.GetComponent<SupportAI>() != null)gameObject.GetComponent<SupportAI>().resetDebuf();
+
+        if (gameObject.name == "Player")
+        {
+            SceneManager.LoadScene("IntroModelledLevel");
+        }
 
         GameObject Effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
