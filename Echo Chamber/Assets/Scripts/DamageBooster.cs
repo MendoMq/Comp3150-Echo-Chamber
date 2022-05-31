@@ -7,6 +7,7 @@ public class DamageBooster : MonoBehaviour
 
     public PlayerAttack gunScript;
 
+    public GameObject boosterParticle;
 
     public void Start()
     {
@@ -17,6 +18,7 @@ public class DamageBooster : MonoBehaviour
     {
         if (coll.gameObject.tag == "Player")
         {
+            Instantiate(boosterParticle, transform.position, transform.rotation);
             gunScript.booster = "DamageBoost";
             Destroy(gameObject);
         }

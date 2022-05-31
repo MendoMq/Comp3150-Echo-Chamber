@@ -409,6 +409,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 8
+  boosterParticle: {fileID: 0}
   booster: 
   timer: 10
 --- !u!114 &9221470316854663732
@@ -427,6 +428,7 @@ MonoBehaviour:
   ProbePrefab: {fileID: 8154606063884258434, guid: 0f93de4edd563214e81768da84bcfce3, type: 3}
   AntiPrefab: {fileID: 8154606063884258434, guid: 197552b7726eeb84480e0ee7321ff99a, type: 3}
   throwThrust: 7.5
+  timer: 4
   disabled: 0
 --- !u!114 &9221470316854663733
 MonoBehaviour:
@@ -488,6 +490,8 @@ MonoBehaviour:
   damageBoost: {fileID: 0}
   shotgun: {fileID: 0}
   smg: {fileID: 0}
+  healthBar: {fileID: 0}
+  drops: 1
 --- !u!1001 &942609007531652528
 PrefabInstance:
   m_ObjectHideFlags: 0

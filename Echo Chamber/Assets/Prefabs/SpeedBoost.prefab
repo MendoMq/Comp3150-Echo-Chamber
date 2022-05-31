@@ -114,8 +114,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.6115911
+  m_Center: {x: 0, y: 0, z: 0.013750315}
 --- !u!114 &8451325266577323876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 0}
+  boosterParticle: {fileID: 8949056000831300865, guid: fa7c512df51fdf14d886f5bbdefd09da, type: 3}
 --- !u!65 &536295646
 BoxCollider:
   m_ObjectHideFlags: 0
