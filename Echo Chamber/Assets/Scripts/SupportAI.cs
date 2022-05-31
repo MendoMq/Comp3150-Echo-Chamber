@@ -71,6 +71,7 @@ public class SupportAI : MonoBehaviour
             if (Vector3.Distance(target.position, transform.position) >= 5)
             {
                 transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+                Shoot();
             }
             else
             {
@@ -90,7 +91,17 @@ public class SupportAI : MonoBehaviour
         slowIndicator.SetActive(false);
     }
 
-
+    public void Shoot()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 5))
+        {
+            if (hit.transform.tag != "Player" && hit.transform.tag != "Ground")
+            {
+                GetComponent<Rigidbody>().velocity = new Vector2(GetComponent<Rigidbody>().velocity.x, 5);
+            }
+        }
+    }
 
     void OnDrawGizmosSelected()
     {
