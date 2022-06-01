@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class WhiteFade : MonoBehaviour
+public class Fade : MonoBehaviour
 {
     int maxValue = 1;
     float alpha;

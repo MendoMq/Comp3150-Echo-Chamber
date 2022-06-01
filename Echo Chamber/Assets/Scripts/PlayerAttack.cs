@@ -41,6 +41,8 @@ public class PlayerAttack : MonoBehaviour
     public string booster;
     public float timer = 10f;
 
+    public bool end = false;
+
     public bool disabled = false;
 
     //shotgun var
@@ -90,7 +92,6 @@ public class PlayerAttack : MonoBehaviour
         {
             if (Input.GetKeyDown("1"))
             {
-                Debug.Log("check");
                 ChangeToPistol();
             }
 
@@ -101,6 +102,14 @@ public class PlayerAttack : MonoBehaviour
             if (Input.GetKeyDown("3"))
             {
                 if (ammo > 0) ChangeToShotgun();
+            }
+        }
+
+        if (end == true)
+        {
+            if (Input.GetKeyDown("k"))
+            {
+                
             }
         }
         
