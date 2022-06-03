@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class EndLevel : MonoBehaviour
 {
-    public GameObject blackFade;
-    public GameObject buttonNext;
+    public GameObject fade;
+
     public GameObject player;
 
 
@@ -14,16 +14,17 @@ public class EndLevel : MonoBehaviour
     {
         if (coll.gameObject.tag == "Player")
         {
-            blackFade.GetComponent<Fade>().startFading();
-            buttonNext.SetActive(true);
+            fade.GetComponent<Fade>().startFading();
+            
 
             //Time.timeScale = 0f;
             
             player.GetComponent<Target>().health = 100000;
-            /*player.GetComponent<MouseLookEcho>().enabled = false;
+            player.GetComponent<MouseLookEcho>().enabled = false;
             player.GetComponent<PlayerAttack>().enabled = false;
             player.GetComponent<CharacterController>().enabled = false;
-            player.GetComponent<PlayerMovement>().enabled = false;*/
+            player.GetComponent<PlayerMovement>().enabled = false;
+            Cursor.lockState = CursorLockMode.None;
 
             player.GetComponent<PlayerAttack>().end = true;
             

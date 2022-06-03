@@ -21,6 +21,7 @@ public class SceneObject : MonoBehaviour
         Debug.Log("Loading Level "+n);
         levelIndex = n;
         if(n == 1)SceneManager.LoadSceneAsync("IntroModelledLevel");
+        if(n == 0)SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
     public void RestartLevel(){

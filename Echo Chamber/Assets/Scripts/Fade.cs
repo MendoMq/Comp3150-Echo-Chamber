@@ -10,6 +10,11 @@ public class Fade : MonoBehaviour
     public float speed;
     bool fading = false;
     Image image;
+
+    public GameObject buttonNext;
+    public GameObject endText;
+    public SceneObject SceneObject;
+            
     
     
     // Start is called before the first frame update
@@ -31,6 +36,16 @@ public class Fade : MonoBehaviour
                 alpha += Time.deltaTime * speed;
             }else{
                 alpha = maxValue;
+            }
+            if(alpha >= maxValue){
+                buttonNext.SetActive(true);
+                endText.SetActive(true);
+
+                if (Input.anyKey)
+                {
+                    Debug.Log("Loading level 0");
+                    SceneObject.LoadLevel(0);
+                }
             }
         }
     }
