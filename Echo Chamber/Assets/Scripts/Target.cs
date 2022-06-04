@@ -15,6 +15,7 @@ public class Target : MonoBehaviour
     public GameObject damageBoost;
     public GameObject shotgun;
     public GameObject smg;
+    public GameOverScreen gameOverScreen;
 
 
     bool dead=false;
@@ -43,8 +44,8 @@ public class Target : MonoBehaviour
     {
         if (gameObject.name == "Player")
         {
-            GameObject SceneObject = GameObject.FindGameObjectWithTag("SceneObject");
-            SceneObject.GetComponent<SceneObject>().RestartLevel();
+            Cursor.lockState = CursorLockMode.None;
+            gameOverScreen.setActive();
         }else{
             if(drops){
                 //rnage is set for the number of item that can be dropped not the percent chance of drop rate

@@ -8,6 +8,7 @@ public class SceneObject : MonoBehaviour
     
     public int levelIndex=1;
     public GameObject screenFade;
+    
 
     // Update is called once per frame
     void Update()
@@ -22,6 +23,7 @@ public class SceneObject : MonoBehaviour
         levelIndex = n;
         if(n == 1)SceneManager.LoadSceneAsync("IntroModelledLevel");
         if(n == 0)SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex - 1);
+        if(n == 2) SceneManager.LoadSceneAsync("MainMenuScene");
     }
 
     public void RestartLevel(){
