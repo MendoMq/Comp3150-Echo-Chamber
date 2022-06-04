@@ -18,7 +18,7 @@ public class Target : MonoBehaviour
     public GameOverScreen gameOverScreen;
 
 
-    bool dead=false;
+    public bool dead=false;
     public HealthBar healthBar;
     public bool drops = true;
 
@@ -44,7 +44,6 @@ public class Target : MonoBehaviour
     {
         if (gameObject.name == "Player")
         {
-            Cursor.lockState = CursorLockMode.None;
             gameOverScreen.setActive();
         }else{
             if(drops){

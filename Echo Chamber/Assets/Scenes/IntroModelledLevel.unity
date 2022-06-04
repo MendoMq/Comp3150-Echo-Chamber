@@ -687,7 +687,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Restart
+  m_Text: Press "z" to Restart
 --- !u!222 &130036885
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2165,6 +2165,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 9221470316854663733, guid: ecbeb3df7d73709429d1c9f3a89fa7f4, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1037995351}
     - target: {fileID: 9221470316854663741, guid: ecbeb3df7d73709429d1c9f3a89fa7f4, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -8423,6 +8427,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7751e04fa31f141990c47a88e27ff1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1037995351 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2592032254963471841, guid: ecbeb3df7d73709429d1c9f3a89fa7f4, type: 3}
+  m_PrefabInstance: {fileID: 499658846}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003278614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7ec60d1c3a53974a9bab71515fca439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1046852927 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 146208301813412269, guid: f8d2f70d51a8fc04cbf19a33a2e18b74, type: 3}
@@ -10802,6 +10817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd49bac334c4b344bb886fe435a063e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneObject: {fileID: 1129156637}
 --- !u!114 &1616503196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10980,7 +10996,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Main Menu
+  m_Text: Press "x" for Main Menu
 --- !u!222 &1648199887
 CanvasRenderer:
   m_ObjectHideFlags: 0
