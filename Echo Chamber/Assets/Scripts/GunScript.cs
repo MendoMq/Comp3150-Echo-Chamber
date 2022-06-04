@@ -14,6 +14,7 @@ public class GunScript : MonoBehaviour
 
     void OnTriggerEnter(Collider coll)
     {
+        //checking the playre guns base on the gun they pickup
         if (coll.gameObject.tag == "Player")
         {
             if(upgradeID == 0){

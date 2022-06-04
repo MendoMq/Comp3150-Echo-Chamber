@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SupportAI : MonoBehaviour
 {
+    //logic
     public Transform target;
     public float speed = 3;
     public float triggerLength = 8;
@@ -46,6 +47,7 @@ public class SupportAI : MonoBehaviour
         {
             if (Vector3.Distance(target.position, transform.position) <= effectLength)
             {
+                //if player is within debuff range
                 movement.speed = slowingSpeed;
                 handPortal.disabled = true;
                 throwPortal.disabled = true;
@@ -60,6 +62,7 @@ public class SupportAI : MonoBehaviour
             }
             else
             {
+                //if player moves out of debuff range
                 movement.speed = normalSpeed;
                 handPortal.disabled = false;
                 throwPortal.disabled = false;

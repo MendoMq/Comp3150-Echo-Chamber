@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    //logic
     private float pistolDmg = 10f;
     private float smgDmg = 5f;
     private float shotgunDmg = 8f;
@@ -54,6 +55,7 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
+        //checks if player has damage boost
         if (booster == "DamageBoost")
         {
             shotgunDmg = 16;
@@ -71,7 +73,7 @@ public class PlayerAttack : MonoBehaviour
         }
 
         
-
+        //checks player inputs
         if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
         {
             nextTimeToFire = Time.time + 1f/fireRate;
@@ -103,18 +105,9 @@ public class PlayerAttack : MonoBehaviour
             {
                 if (ammo > 0) ChangeToShotgun();
             }
-        }
-
-        if (end == true)
-        {
-            if (Input.GetKeyDown("k"))
-            {
-                
-            }
-        }
-        
+        }  
     }
-
+    //changing weapons and portal
     public void ChangeToPistol(){
         fireRate = 3f;
         
@@ -173,6 +166,7 @@ public class PlayerAttack : MonoBehaviour
 
     }
 
+    //shooting functions for each weapon
     void Shoot()
     {
         RaycastHit hit;

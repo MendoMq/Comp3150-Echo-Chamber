@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MainMenuSpawner : MonoBehaviour
 {
-
+    //this just sets the buble the spawns in the main menu
     public GameObject bubble;
     public float timer = 10f;
 

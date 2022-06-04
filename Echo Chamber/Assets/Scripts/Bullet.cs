@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        //if the object hit has a target script, then that target takes damage
         Target target = collision.transform.GetComponent<Target>();
         if (target != null)
         {

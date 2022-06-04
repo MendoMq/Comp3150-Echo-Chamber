@@ -16,6 +16,7 @@ public class DamageBooster : MonoBehaviour
 
     void OnTriggerEnter(Collider coll)
     {
+        //sends to the player attack script that they have picked up a damage boost
         if (coll.gameObject.tag == "Player")
         {
             Instantiate(boosterParticle, transform.position, transform.rotation);

@@ -18,6 +18,7 @@ public class EnemyAI : MonoBehaviour
     public Transform target;
 
     void Start(){
+        //sets the player as a target
         target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 

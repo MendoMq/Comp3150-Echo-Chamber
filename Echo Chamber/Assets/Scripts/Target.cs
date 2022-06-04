@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Target : MonoBehaviour
 {
-
+    //logic
     public float health = 50f;
     public GameObject deathEffect;
     public bool keepOnDeath;
@@ -15,6 +15,8 @@ public class Target : MonoBehaviour
     public GameObject damageBoost;
     public GameObject shotgun;
     public GameObject smg;
+
+
     bool dead=false;
     public HealthBar healthBar;
     public bool drops = true;

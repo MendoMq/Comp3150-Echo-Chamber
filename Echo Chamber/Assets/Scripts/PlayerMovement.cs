@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    //logic
     public CharacterController controller;
     public float gravity = 19.81f;
     public float jumpHeight = 3f;

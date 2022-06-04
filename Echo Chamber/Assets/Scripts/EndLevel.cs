@@ -17,8 +17,7 @@ public class EndLevel : MonoBehaviour
             fade.GetComponent<Fade>().startFading();
             
 
-            //Time.timeScale = 0f;
-            
+            //sets it so the player cannnot move and cannot die quickly
             player.GetComponent<Target>().health = 100000;
             player.GetComponent<MouseLookEcho>().enabled = false;
             player.GetComponent<PlayerAttack>().enabled = false;

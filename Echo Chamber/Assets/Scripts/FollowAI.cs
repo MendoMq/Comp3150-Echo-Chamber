@@ -22,6 +22,7 @@ public class FollowAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if player enters follow range start following
         if (Vector3.Distance(target.position, transform.position) < triggerLength && aiAgro == false)
         {
             aiAgro = true;
