@@ -42,7 +42,12 @@ public class Target : MonoBehaviour
         if (gameObject.name == "Player")
         {
             GameObject SceneObject = GameObject.FindGameObjectWithTag("SceneObject");
-            SceneObject.GetComponent<SceneObject>().RestartLevel();
+            SceneObject.GetComponent<SceneObject>().Died();
+            gameObject.GetComponent<MouseLookEcho>().enabled = false;
+            gameObject.GetComponent<PlayerAttack>().enabled = false;
+            gameObject.GetComponent<CharacterController>().enabled = false;
+            gameObject.GetComponent<PlayerMovement>().enabled = false;
+            Cursor.lockState = CursorLockMode.None;
         }else{
             if(drops){
                 //rnage is set for the number of item that can be dropped not the percent chance of drop rate

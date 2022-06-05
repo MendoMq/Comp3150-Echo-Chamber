@@ -7,13 +7,18 @@ public class SceneObject : MonoBehaviour
 {
     
     public int levelIndex=1;
+    public bool dead=false;
     public GameObject screenFade;
+    public GameObject deathScreen;
 
     // Update is called once per frame
     void Update()
     {
         if(Input.GetKeyDown("l")){
             LoadLevel(1);
+        }
+        if(Input.anyKey && dead){
+            RestartLevel();
         }
     }
 
@@ -26,6 +31,11 @@ public class SceneObject : MonoBehaviour
 
     public void RestartLevel(){
         LoadLevel(levelIndex);
+    }
+    
+    public void Died(){
+        deathScreen.SetActive(true);
+        dead=true;
     }
 
     public void Quit(){
